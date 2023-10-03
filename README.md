@@ -1,3 +1,9 @@
+<h2>Gift window is a e-commerce website created by laravel 10</h2>
+<h3> for authentication :https://jetstream.laravel.com/introduction.html</h3>
+<h3> as USER you can : add product in cart to buy it , Show your cart , pay your order by visa or cash on delivery </h3>
+<h3>AS ADmin you can : add category or your product,Show categories in blade file , show products in blade file , Add product,edit product ,Show orders,
+show which orders is deliver and which not, Send notification to user , Show number of orders -total of orders - number of products - how many orders delived  and how not in dashboard  </h3>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
