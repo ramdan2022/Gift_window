@@ -34,16 +34,21 @@
                         @if (Route::has('login'))
                         @auth
 
-                        @php
-                        $user = Auth::user();
-                        @endphp
-
-                         <form class="form-inline"  action="{{url('/show_cart',$user->id)}}">
+         
+                        <li class="nav-item">
+                         <form class="form-inline"  action="{{url('/show_cart')}}">
+                           @csrf
                            <button style="font-size:24px" type="submit">
                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                            </button>
                         </form>
+                     </li>
 
+                      </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{url('show_orders')}}">Orders</a>
+                        </li>
+                       
                         <x-app-layout>
    
                         </x-app-layout>

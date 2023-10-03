@@ -135,7 +135,9 @@ class HomeController extends Controller
       
     }
 
-    public function show_cart($id){
+    public function show_cart(){
+
+        $id=auth::user()->id;
 
         $carts= carts::where('user_id','=',$id)->get();
 
@@ -260,6 +262,25 @@ class HomeController extends Controller
     
    
         return redirect()->back()->with('message','successfully order');
+
+    }
+
+    public function show_orders(){
+        $user = Auth::user();
+
+        $orders = Order::where('user_id','=',$user->id)->get();
+
+        return view ('Home.show_orders',compact('orders'));
+    }
+
+    public function cancel_order($id){
+
+        Order::where('id','=',$id)
+        ->update(['Delivery_status' => 'order is canceled']);
+
+        return redirect()->back()->with('message','No action');
+
+        
 
     }
 }

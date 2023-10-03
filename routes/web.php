@@ -49,8 +49,10 @@ route::get('/search',[AdminHome::class,'search']);
 
 route::get('/Product_Details/{id}',[HomeController::class,'Product_Details']);
 route::post('/Add_cart/{id}',[HomeController::class,'Add_cart']);
-route::get('/show_cart/{id}',[HomeController::class,'show_cart']);
+route::get('/show_cart',[HomeController::class,'show_cart']);
 route::get('/del_item/{id}',[HomeController::class,'del_item']);
 route::get('cash_deliver',[HomeController::class,'cash_deliver']);
 route::get('stripe/{finalprise}',[HomeController::class,'stripe']);
 route::post('stripe/{finalprise}',[HomeController::class,'stripePost'])->name('stripe.post');
+route::get('show_orders',[HomeController::class,'show_orders']);
+route::get('cancel_order/{id}',[HomeController::class,'cancel_order']);
