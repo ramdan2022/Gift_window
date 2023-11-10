@@ -283,5 +283,14 @@ class HomeController extends Controller
         
 
     }
+
+    public function Search_product(request $request){
+
+        $search_product = $request->search;
+
+        $products = product::where('Title','LIKE',"%$search_product%")->paginate(3);
+
+        return view('Home.userpage',compact('products'));
+    }
 }
   

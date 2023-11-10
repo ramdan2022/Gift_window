@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Requestes\StoreUserRequest;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,6 +42,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        'createed_at',
+        'updated_at',
+         'two_factor_confirmed_at',
+         'current_team_id',
+        'profile_photo_path',
+        'usertype',
+            'phone',
+            'address',
     ];
 
     /**
@@ -60,4 +69,6 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+   
 }

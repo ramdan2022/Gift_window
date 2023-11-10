@@ -86,7 +86,7 @@
 
           
            <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/show_orders')}}">
+            <a class="nav-link" href="{{url('/orders')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>

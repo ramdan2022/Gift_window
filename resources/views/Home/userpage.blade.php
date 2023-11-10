@@ -35,21 +35,31 @@
       <!-- end why section -->
       
       <!-- arrival section -->
-     @include('Home\Arrival')
+    
       <!-- end arrival section -->
       
       <!-- product section -->
+      <div style="padding-left:30px; text-align:center">
+         <form action="{{url('Search_product')}}" method="get">
+            @csrf
+            
+            <input style="width:300px;" type="text" name="search" placeholder="place product name or price">
+         </input>
+            
+            <input type="submit" value="search" ></input>
+         </form>
+    </div>
       @include('Home\product')
       <!-- end product section -->
-
+      @include('Home\subscribe')
       <!-- subscribe section -->
-     @include('Home\subscribe')
+    
       <!-- end subscribe section -->
       <!-- client section -->
-     @include('Home/clint')
+    @include('Home\footer')
       <!-- end client section -->
       <!-- footer start -->
-      @include('Home.footer')
+     
       
       <!-- footer end -->
       <div class="cpy_">

@@ -147,16 +147,7 @@ class AdminHome extends Controller{
       $request->image->move('product',$imagename);
 
       $product->Image = $imagename;
-    /*
-     $image=$request->image ;
-
-      $imagename = time().'.'.$image->getclientOriginalExtension();
-
-      $request->image->move('product',$imagename);
-
-      $product->Image=$imagename;
-
-    */ 
+   
 
       $product->save();
 
