@@ -8,10 +8,11 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Http\Resources\productResource;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\product;
 use App\Traits\HttpResponse;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class API_admin extends Controller
 {
@@ -105,16 +106,46 @@ class API_admin extends Controller
         return $this->http_json_response(200,"show CAtegory as admin",$category);
     }
 
-    public function add_categoey(request $request){
+    public function add_category(request $request){
 
           $request->validate([
             "category_name" => 'required|unique:categories',
           ]);
 
           $category = Category::create([
-            "category_name" => $request['category_name'];
+            "category_name" => $request['category_name']]);
 
             return $this->Http_json_response(200,'',$category);
-          ]);
+          
+    }
+
+    public function category_delete($id){
+
+        $product = product::find($id);
+
+        $product->delete();
+
+        return $this->Http_json_response(200,'category delete');
+
+    }
+
+    public function show_order(){
+
+        $order =Order::all();
+
+        return $this ->Http_json_response(200,'This is order For admin',$order);
+    }
+
+    public function order_delivered($id){
+
+        $order = Order::find($id);
+
+        $res = DB::table('orders')->
+        where('id','=',$id)->
+        update(['Delivery_status'=>'delivered','Payment_status'=>'Paid']);
+
+        if($res){
+            return $this->Http_json_response(200,'order is Deliverd',$order);
+        }
     }
 }
